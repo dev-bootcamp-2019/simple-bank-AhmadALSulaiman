@@ -1,5 +1,6 @@
 var SimpleBank = artifacts.require("./SimpleBank.sol");
 
+
 contract('SimpleBank', function(accounts) {
 
   const owner = accounts[0]
@@ -62,10 +63,8 @@ contract('SimpleBank', function(accounts) {
 
     const expectedEventResult = {accountAddress: alice, newBalance: initialAmount, withdrawAmount: deposit};
 
-
     assert.equal(expectedEventResult.accountAddress, accountAddress, "LogWithdrawal event accountAddress property not emitted, check deposit method");
     assert.equal(expectedEventResult.newBalance, newBalance, "LogWithdrawal event newBalance property not emitted, check deposit method");
     assert.equal(expectedEventResult.withdrawAmount, withdrawAmount, "LogWithdrawal event withdrawalAmount property not emitted, check deposit method");
-
   });
 });
